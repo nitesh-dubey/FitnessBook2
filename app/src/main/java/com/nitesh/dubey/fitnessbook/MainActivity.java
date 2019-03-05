@@ -1,92 +1,47 @@
 package com.nitesh.dubey.fitnessbook;
 
-import android.content.Context;
-import android.hardware.Sensor;
-import android.hardware.SensorEvent;
-import android.hardware.SensorEventListener;
-import android.hardware.SensorManager;
+import android.content.Intent;
+import android.os.Handler;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.util.Log;
+import android.text.method.LinkMovementMethod;
 import android.view.View;
-import android.widget.Button;
 import android.widget.TextView;
-import android.widget.Toast;
 
-import org.w3c.dom.Text;
+public class MainActivity extends AppCompatActivity {
 
-public class MainActivity extends AppCompatActivity implements SensorEventListener {
-
-    Button btn1,btn2;
-
-    SensorManager sensormanager;
-    TextView txt2;
-    private int steps = 0;
-    boolean isRunning = false;
+//    private static int SPLASH_TIME_OUT = 4000;
+    TextView txt1,txt2,txt3,txt4,txt5;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        sensormanager = (SensorManager) getSystemService(Context.SENSOR_SERVICE);
+
+//        new Handler().postDelayed(new Runnable() {
+//            @Override
+//            public void run() {
+//                Intent welcomeScreen = new Intent(MainActivity.this , welcomeScreen.class);
+//                startActivity(welcomeScreen);
+//            }
+//        },SPLASH_TIME_OUT);
+
+        txt1 = (TextView) findViewById(R.id.txt1);
         txt2 = (TextView) findViewById(R.id.txt2);
-        btn1 = (Button) findViewById(R.id.btn1);
-        btn2 = (Button) findViewById(R.id.btn2);
+        txt3 = (TextView) findViewById(R.id.txt3);
+        txt4 = (TextView) findViewById(R.id.txt4);
+        txt5 = (TextView) findViewById(R.id.txt5);
 
-        Sensor countSensor = sensormanager.getDefaultSensor(Sensor.TYPE_STEP_DETECTOR);
-        if(countSensor != null){
-            sensormanager.registerListener(this,countSensor,SensorManager.SENSOR_DELAY_UI);
-        } else {
-            Toast.makeText(this,"NO sensor Found",Toast.LENGTH_LONG).show();
-        }
-        isRunning = true;
-
-
+        txt1.setMovementMethod(LinkMovementMethod.getInstance());
+        txt2.setMovementMethod(LinkMovementMethod.getInstance());
+        txt3.setMovementMethod(LinkMovementMethod.getInstance());
+        txt4.setMovementMethod(LinkMovementMethod.getInstance());
     }
 
-    public void stop (View v) {
-        isRunning = false;
+    public void openPedometer (View view) {
+        Intent pedometer = new Intent(MainActivity.this , FirstActivity.class);
+        startActivity(pedometer);
     }
 
-    public void reset (View v) {
-        steps = 0;
-        txt2.setText("" + steps);
-        isRunning = true;
-    }
-
-    @Override
-    protected void onResume() {
-        super.onResume();
-        isRunning = true;
-//        Sensor countSensor = sensormanager.getDefaultSensor(Sensor.TYPE_STEP_COUNTER);
-//        if(countSensor != null){
-//           sensormanager.registerListener(this,countSensor,SensorManager.SENSOR_DELAY_UI);
-//        } else {
-//            Toast.makeText(this,"NO sensor Found",Toast.LENGTH_LONG).show();
-//        }
-    }
-
-    @Override
-    protected void onPause() {
-        super.onPause();
-        //Log.i("tagggggg",""+ steps);
-        //isRunning = false;
-        isRunning = false;
-    }
-
-    @Override
-    public void onSensorChanged(SensorEvent event) {
-        if(!isRunning) return;
-            steps++;
-            Log.i("Tagggggg",""+ steps);
-            txt2.setText("" + steps);
-
-
-    }
-
-    @Override
-    public void onAccuracyChanged(Sensor sensor, int accuracy) {
-
-    }
 }

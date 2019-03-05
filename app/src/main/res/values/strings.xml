@@ -1,3 +1,20 @@
 <resources>
     <string name="app_name">Fitness Book</string>
+
+    <string name="Diet">
+        <a href = "https://www.quora.com/What-is-the-best-diet-for-healthy-living">Diet Tips</a>
+    </string>
+
+    <string name="Exercise">
+        <a href = "https://www.quora.com/Working-Out-What-are-the-best-gym-tips-you-could-give-for-a-beginner">Exercise Tips</a>
+    </string>
+
+    <string name="Yoga">
+        <a href = "https://www.stylecraze.com/articles/simple-tips-for-practicing-yoga-at-home/#gref">Yoga Tips</a>
+    </string>
+
+    <string name="Tips">
+        <a href = "https://www.quora.com/What-are-some-simple-tips-to-improve-your-health">Health Tips</a>
+    </string>
+
 </resources>
