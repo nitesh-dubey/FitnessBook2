@@ -1,6 +1,7 @@
 package com.nitesh.dubey.fitnessbook;
 
 import android.content.Intent;
+import android.media.MediaPlayer;
 import android.os.Handler;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -13,6 +14,9 @@ public class welcomeScreen extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_welcome_screen);
+
+        MediaPlayer loginTune = MediaPlayer.create(this, R.raw.loginsound);
+        loginTune.start();
 
         new Handler().postDelayed(new Runnable() {
             @Override

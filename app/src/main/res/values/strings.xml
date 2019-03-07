@@ -16,6 +16,11 @@
     <string name="Tips">
         <a href="https://www.quora.com/What-are-some-simple-tips-to-improve-your-health">Health Tips</a>
     </string>
+
+    <string name="HealthGroup">
+        <a href="https://www.facebook.com/groups/283034362174461/">Join Health Group</a>
+    </string>
+
     <string name="title_activity_login">Sign in</string>
     <!-- Strings related to login -->
     <string name="prompt_email">Email</string>

@@ -48,6 +48,12 @@ public class FirstActivity extends AppCompatActivity implements SensorEventListe
 
     public void stop (View v) {
         isRunning = false;
+        if(steps < 1000)
+        Toast.makeText(FirstActivity.this, "Congrats!! You Have Run " + steps + " steps",Toast.LENGTH_LONG).show();
+        else {
+            Toast.makeText(FirstActivity.this, "You are on Fire Today!!",Toast.LENGTH_LONG).show();
+        }
+
     }
 
     public void reset (View v) {
