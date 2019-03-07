@@ -17,8 +17,8 @@ public class welcomeScreen extends AppCompatActivity {
         new Handler().postDelayed(new Runnable() {
             @Override
             public void run() {
-                Intent mainScreen = new Intent(welcomeScreen.this , MainActivity.class);
-                startActivity(mainScreen);
+                Intent loginScreen = new Intent(welcomeScreen.this ,LoginActivity.class);
+                startActivity(loginScreen);
                 finish();
             }
         },SPLASH_TIME_OUT);
