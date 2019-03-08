@@ -1,16 +1,16 @@
 <resources>
     <string name="app_name">Fitness Book</string>
 
-    <string name="Diet">
-        <a href="https://www.quora.com/What-is-the-best-diet-for-healthy-living">Diet Tips</a>
+    <string name="homepage">
+        <a href="https://maxz2136.github.io/Fitnessbook/">Home Page</a>
     </string>
 
-    <string name="Exercise">
-        <a href="https://www.quora.com/Working-Out-What-are-the-best-gym-tips-you-could-give-for-a-beginner">Exercise Tips</a>
+    <string name="hospitals">
+        <a href="https://justdial.com/Guwahati/Private-Hospitals/nct-10390288">Guwahati Hospitals</a>
     </string>
 
-    <string name="Yoga">
-        <a href="https://www.stylecraze.com/articles/simple-tips-for-practicing-yoga-at-home/#gref">Yoga Tips</a>
+    <string name="Blog">
+        <a href="https://maxz2136.github.io/Fitnessbook.html?">Blog</a>
     </string>
 
     <string name="Tips">

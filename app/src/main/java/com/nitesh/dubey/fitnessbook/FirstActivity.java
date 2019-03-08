@@ -21,7 +21,7 @@ public class FirstActivity extends AppCompatActivity implements SensorEventListe
     Button btn1,btn2;
 
     SensorManager sensormanager;
-    TextView txt2;
+    TextView txt2,txt3;
     private int steps = 0;
     boolean isRunning = false;
 
@@ -34,6 +34,7 @@ public class FirstActivity extends AppCompatActivity implements SensorEventListe
         txt2 = (TextView) findViewById(R.id.txt2);
         btn1 = (Button) findViewById(R.id.btn1);
         btn2 = (Button) findViewById(R.id.btn2);
+        txt3 = (TextView) findViewById(R.id.txt3);
 
         Sensor countSensor = sensormanager.getDefaultSensor(Sensor.TYPE_STEP_DETECTOR);
         if(countSensor != null){
@@ -53,6 +54,8 @@ public class FirstActivity extends AppCompatActivity implements SensorEventListe
         else {
             Toast.makeText(FirstActivity.this, "You are on Fire Today!!",Toast.LENGTH_LONG).show();
         }
+        txt3.setText("Average calories burned:: " + (((float)steps/1000)*100) + " kcal");
+
 
     }
 
@@ -60,6 +63,7 @@ public class FirstActivity extends AppCompatActivity implements SensorEventListe
         steps = 0;
         txt2.setText("" + steps);
         isRunning = true;
+        txt3.setText("");
     }
 
     @Override
