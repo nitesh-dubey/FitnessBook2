@@ -1,27 +1,146 @@
 <resources>
     <string name="app_name">Fitness Book</string>
 
-    <string name="homepage">
-        <a href="https://maxz2136.github.io/Fitnessbook/">Home Page</a>
-    </string>
+    <!--<string name="homepage">-->
+    <!--<a href="https://maxz2136.github.io/Fitnessbook/">Home Page</a>-->
+    <!--</string>-->
 
-    <string name="hospitals">
-        <a href="https://justdial.com/Guwahati/Private-Hospitals/nct-10390288">Guwahati Hospitals</a>
-    </string>
+    <!--<string name="hospitals">-->
+    <!--<a href="https://justdial.com/Guwahati/Private-Hospitals/nct-10390288">Guwahati Hospitals</a>-->
+    <!--</string>-->
 
-    <string name="Blog">
-        <a href="https://maxz2136.github.io/Fitnessbook.html?">Blog</a>
-    </string>
+    <!--<string name="Blog">-->
+    <!--<a href="https://maxz2136.github.io/Fitnessbook.html?">Blog</a>-->
+    <!--</string>-->
 
     <string name="Tips">
         <a href="https://www.quora.com/What-are-some-simple-tips-to-improve-your-health">Health Tips</a>
     </string>
 
-    <string name="HealthGroup">
-        <a href="https://www.facebook.com/groups/283034362174461/">Join Health Group</a>
+    <!--<string name="HealthGroup">-->
+    <!--<a href="https://www.facebook.com/groups/283034362174461/">Join Health Group</a>-->
+    <!--</string>-->
+    <string name="DietTips">
+        Your food choices matter a lot specially when you\'ve got diabetes.\n Though, Diabetese can not hamper you from enjoying your life if you remain strict in your Diet Plan.\n
+        Here follows a must follow list of food items to fulfill your nutritional needs.\n\n\n
+        STARCHES:\n\n\n
+
+        Best Choices:\n\n
+        **\t\t   Whole grains, such as brown rice, oatmeal, quinoa, millet, or amaranth.\n
+        **\t\t   Baked sweet potato.\n
+        **\t\t   Items made with whole grains and no (or very little) added sugar.\n\n
+
+        Worst Choices:\n\n
+        **\t\t    Processed grains, such as white rice or white flour.\n
+        **\t\t    Cereals with little whole grains and lots of sugar.\n
+        **\t\t    White bread.\n
+        **\t\t    French fries.\n
+        **\t\t    Fried white-flour tortillas.\n\n\n
+
+        VEGETABLES\n\n\n
+
+        Best Choices:\n\n
+        **\t\t    Eat a lot of vegetables as you will get fiber and very little fat or sugar\n
+        **\t\t    Fresh veggies, eaten raw or lightly steamed, roasted, or grilled.\n
+        **\t\t    Plain frozen vegetables, lightly steamed.\n
+        **\t\t    Greens such as kale, spinach, and arugula.\n
+        **\t\t    Low sodium or unsalted canned vegetables\n\n
+
+        Worst Choices:\n\n
+        **\t\t    Canned vegetables with lots of added sodium.\n
+        **\t\t    Veggies cooked with lots of added butter, cheese, or sauce.\n
+        **\t\t    Pickles, if you need to limit sodium. Otherwise, pickles are OK.\n
+        **\t\t    Sauerkraut, for the same reason as pickles. Limit them if you have high blood pressure.\n\n\n
+
+        FRUITS:\n\n\n
+        They give you carbohydrates, vitamins, minerals, and fiber. Most are naturally low in fat and sodium.\n\n
+
+        Best Choices:\n\n
+        **\t\t    Grapes,Apples,Berries,Citrus fruits,Pineapple,Mango,Papaya,Cantaloupe will  be good choice.\n
+        **\t\t    Fresh fruit.\n
+        **\t\t    Plain frozen fruit or fruit canned without added sugar.\n
+        **\t\t    Sugar-free or low-sugar jam or preserves.\n
+        **\t\t    No-sugar-added applesauce.\n\n
+
+        Worst Choices:\n\n
+        **\t\t    Canned fruit with heavy sugar syrup.\n
+        **\t\t    Chewy fruit rolls.\n
+        **\t\t    Regular jam, jelly, and preserves.\n
+        **\t\t    Sweetened applesauce.\n
+        **\t\t    Fruit punch, fruit drinks, fruit juice drinks.\n\n\n
+
+        PROTEIN:\n\n\n
+
+        Best Choices:\n\n
+        **\t\t    Plant-based proteins such as beans, nuts, seeds, or tofu.\n
+        **\t\t    Fish and seafood.\n
+        **\t\t    Chicken and other poultry.\n
+        **\t\t    Eggs and low-fat dairy.\n\n
+
+        Worst Choices:\n\n
+        **\t\t    Fried meats.\n
+        **\t\t    Higher-fat cuts of meat, such as ribs.\n
+        **\t\t    Pork bacon.\n
+        **\t\t    Regular cheeses.\n
+        **\t\t    Poultry with skin.\n
+        **\t\t    Deep-fried fish.\n
+        **\t\t    Deep-fried tofu.\n
+        **\t\t    Beans prepared with lard.\n\n\n
+
+        DAIRY:\n\n\n
+
+        Best Choices:\n\n
+        **\t\t    1% or skim milk.\n
+        **\t\t    Low-fat yogurt.\n
+        **\t\t    Low-fat cottage cheese.\n
+        **\t\t    Low-fat or nonfat sour cream.\n\n
+
+        Worst Choices:\n\n
+        **\t\t    Whole milk.\n
+        **\t\t    Regular yogurt.\n
+        **\t\t    Regular cottage cheese.\n
+        **\t\t    Regular sour cream.\n
+        **\t\t    Regular ice cream.\n
+        **\t\t    Regular half-and-half.\n\n\n
+
+        Fats, Oils, and Sweets:\n\n\n
+               Always include only Natural fats to your diet.\n\n
+
+        Best Choices:\n\n
+        **\t\t    Natural sources of vegetable fats, such as nuts, seeds, or avocados.\n
+        **\t\t    Foods that give you omega-3 fatty acids, such as salmon, tuna, or mackerel.\n
+        **\t\t    Plant-based oils, such as canola, grapeseed, or olive oils.\n\n
+
+        Worst Choices:\n\n
+        **\t\t    Anything with trans fat in it is bad for your heart. Check the ingredient list for anything that’s “partially hydrogenated,” \n
+        **\t\t    even if the label says it has 0 grams of trans fat.\n
+        **\t\t    Big portions of saturated fats, which mainly come from animal products but also are in coconut oil and palm oil.\n\n\n
+
+        DRINKS:\n\n\n
+
+        Best Choices:\n\n
+        **\t\t    Unflavored water or flavored sparkling water.\n
+        **\t\t    Unsweetened tea with or without a slice of lemon.\n
+        **\t\t    Coffee, black or with added low-fat milk and sugar substitute.\n\n
+
+        Worst Choices:\n\n
+        **\t\t    Regular sodas.\n
+        **\t\t    Regular beer, fruity mixed drinks, dessert wines.\n
+        **\t\t    Sweetened tea.\n
+        **\t\t    Coffee with sugar and cream.\n
+        **\t\t    Flavored coffees and chocolate drinks.\n
+        **\t\t    Energy drinks.\n
+
+
     </string>
 
-    <string name="title_activity_login">Sign in</string>
+
+
+    <string name="Lifestyle">
+
+    </string>
+
+    <!--<string name="title_activity_login">Sign in</string>-->
     <!-- Strings related to login -->
     <string name="prompt_email">Email</string>
     <string name="prompt_password">Password (optional)</string>
