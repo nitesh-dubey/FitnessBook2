@@ -2,28 +2,28 @@ package com.nitesh.dubey.fitnessbook;
 
 import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.hardware.Sensor;
 import android.hardware.SensorEvent;
 import android.hardware.SensorEventListener;
 import android.hardware.SensorManager;
+import android.preference.PreferenceManager;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
-import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import org.w3c.dom.Text;
-
 public class FirstActivity extends AppCompatActivity implements SensorEventListener {
 
-    Button btn1,btn2;
+    //Button btn1,btn2;
 
     SensorManager sensormanager;
-    TextView txt2,txt3;
-    private int steps = 0;
+    TextView txt2,txt3,txt4,txt5,txt6;
+    private long steps = 0;
     boolean isRunning = false;
+    boolean startButtonPressed = false;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -32,8 +32,8 @@ public class FirstActivity extends AppCompatActivity implements SensorEventListe
 
         sensormanager = (SensorManager) getSystemService(Context.SENSOR_SERVICE);
         txt2 = (TextView) findViewById(R.id.txt2);
-        btn1 = (Button) findViewById(R.id.btn1);
-        btn2 = (Button) findViewById(R.id.btn2);
+        txt4 = (TextView) findViewById(R.id.txt4);
+        //btn2 = (Button) findViewById(R.id.btn2);
         txt3 = (TextView) findViewById(R.id.txt3);
 
         Sensor countSensor = sensormanager.getDefaultSensor(Sensor.TYPE_STEP_DETECTOR);
@@ -42,13 +42,13 @@ public class FirstActivity extends AppCompatActivity implements SensorEventListe
         } else {
             Toast.makeText(this,"NO sensor Found",Toast.LENGTH_LONG).show();
         }
-        isRunning = true;
 
 
     }
 
     public void stop (View v) {
         isRunning = false;
+        startButtonPressed = false;
         if(steps < 1000)
         Toast.makeText(FirstActivity.this, "Congrats!! You Have Run " + steps + " steps",Toast.LENGTH_LONG).show();
         else {
@@ -60,16 +60,31 @@ public class FirstActivity extends AppCompatActivity implements SensorEventListe
     }
 
     public void reset (View v) {
+
+        SharedPreferences saves = PreferenceManager.getDefaultSharedPreferences(getApplicationContext());
+        long stepsRunToday = saves.getLong("STEPS_RUN_TODAY", 0);
+        long stepsRunThisMonth = saves.getLong("STEPS_RUN_THIS_MONTH", 0);
+        long highestStepsRunInOneDay = saves.getLong("HIGHEST_STEPS_RUN_IN_ONE_DAY", 0);
+
+        SharedPreferences.Editor editor = saves.edit();
+        editor.putLong("STEPS_RUN_TODAY", steps + stepsRunToday);
+        editor.putLong("STEPS_RUN_THIS_MONTH", steps + stepsRunThisMonth);
+        if((steps+stepsRunToday) > highestStepsRunInOneDay) {
+            editor.putLong("HIGHEST_STEPS_RUN_IN_ONE_DAY", steps+stepsRunToday);
+        }
+        editor.commit();
+
         steps = 0;
         txt2.setText("" + steps);
         isRunning = true;
+        startButtonPressed = false;
         txt3.setText("");
     }
 
     @Override
     protected void onResume() {
         super.onResume();
-        isRunning = true;
+        if(startButtonPressed == true) isRunning = true;
 //        Sensor countSensor = sensormanager.getDefaultSensor(Sensor.TYPE_STEP_COUNTER);
 //        if(countSensor != null){
 //           sensormanager.registerListener(this,countSensor,SensorManager.SENSOR_DELAY_UI);
@@ -83,16 +98,16 @@ public class FirstActivity extends AppCompatActivity implements SensorEventListe
         super.onPause();
         //Log.i("tagggggg",""+ steps);
         //isRunning = false;
-        isRunning = false;
+        if(startButtonPressed == true) isRunning = true;
     }
 
     @Override
     public void onSensorChanged(SensorEvent event) {
-        if(!isRunning) return;
-        steps++;
-        Log.i("Tagggggg",""+ steps);
-        txt2.setText("" + steps);
-
+        if(isRunning && startButtonPressed) {
+            steps++;
+            Log.i("Tagggggg", "" + steps);
+            txt2.setText("" + steps);
+        }
 
     }
 
@@ -102,8 +117,29 @@ public class FirstActivity extends AppCompatActivity implements SensorEventListe
     }
 
     public void back (View view) {
+
+        SharedPreferences saves = PreferenceManager.getDefaultSharedPreferences(getApplicationContext());
+        long stepsRunToday = saves.getLong("STEPS_RUN_TODAY", 0);
+        long stepsRunThisMonth = saves.getLong("STEPS_RUN_THIS_MONTH", 0);
+        long highestStepsRunInOneDay = saves.getLong("HIGHEST_STEPS_RUN_IN_ONE_DAY", 0);
+
+        SharedPreferences.Editor editor = saves.edit();
+        editor.putLong("STEPS_RUN_TODAY", steps + stepsRunToday);
+        editor.putLong("STEPS_RUN_THIS_MONTH", steps + stepsRunThisMonth);
+        if((steps+stepsRunToday) > highestStepsRunInOneDay) {
+            editor.putLong("HIGHEST_STEPS_RUN_IN_ONE_DAY", steps+stepsRunToday);
+        }
+        editor.commit();
+
+
         sensormanager.unregisterListener(this);
         Intent back = new Intent(FirstActivity.this , MainActivity.class);
         startActivity(back);
+        finish();
+    }
+
+    public void start (View view) {
+        isRunning = true;
+        startButtonPressed = true;
     }
 }

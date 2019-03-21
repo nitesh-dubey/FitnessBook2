@@ -30,7 +30,8 @@
             </intent-filter>
         </activity>
         <activity android:name=".LoginActivity" />
-        <activity android:name=".DiabeteseTips"></activity>
+        <activity android:name=".DiabeteseTips" />
+        <activity android:name=".DistanceRun"></activity>
     </application>
 
 </manifest>

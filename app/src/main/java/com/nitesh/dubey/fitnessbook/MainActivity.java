@@ -1,11 +1,15 @@
 package com.nitesh.dubey.fitnessbook;
 
+import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
+import android.preference.PreferenceManager;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.text.method.LinkMovementMethod;
 import android.view.View;
 import android.widget.TextView;
+
+import java.util.Calendar;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -61,6 +65,35 @@ public class MainActivity extends AppCompatActivity {
         //txt3.setMovementMethod(LinkMovementMethod.getInstance());
         //txt4.setMovementMethod(LinkMovementMethod.getInstance());
         //txt6.setMovementMethod(LinkMovementMethod.getInstance());
+
+        Calendar newlogin = Calendar.getInstance();
+        long currentyear = newlogin.get(Calendar.YEAR);
+        long currentmonth = newlogin.get(Calendar.MONTH);
+        long currentdate = newlogin.get(Calendar.DATE);
+
+        SharedPreferences lastlogin = PreferenceManager.getDefaultSharedPreferences(getApplicationContext());
+        long lastyear = lastlogin.getLong("LAST_YEAR", 0);
+        long lastmonth = lastlogin.getLong("LAST_MONTH", 0);
+        long lastdate = lastlogin.getLong("LAST_DATE", 0);
+
+        if((currentyear-lastyear > 0) || (currentmonth-lastmonth > 0) || (currentdate-lastdate > 0)) {
+
+            SharedPreferences saves = PreferenceManager.getDefaultSharedPreferences(getApplicationContext());
+            SharedPreferences.Editor editor = saves.edit();
+            editor.putLong("STEPS_RUN_TODAY", 0);
+            if((currentyear-lastyear > 0) || (currentmonth-lastmonth > 0)) {
+                editor.putLong("STEPS_RUN_THIS_MONTH", 0);
+            }
+            editor.commit();
+
+            //Login Time Update
+            SharedPreferences.Editor editor1 = lastlogin.edit();
+            editor1.putLong("LAST_YEAR", currentyear);
+            editor1.putLong("LAST_MONTH", currentmonth);
+            editor1.putLong("LAST_DATE", currentdate);
+            editor1.commit();
+        }
+
     }
 
     public void openPedometer (View view) {
@@ -73,6 +106,11 @@ public class MainActivity extends AppCompatActivity {
     public void diettips (View view) {
         Intent diet = new Intent(MainActivity.this, DiabeteseTips.class);
         startActivity(diet);
+    }
+
+    public void distanceRunByYou (View view) {
+        Intent distanceRun = new Intent(MainActivity.this, DistanceRun.class);
+        startActivity(distanceRun);
     }
 
 }
