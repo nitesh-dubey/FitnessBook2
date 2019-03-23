@@ -113,4 +113,8 @@ public class MainActivity extends AppCompatActivity {
         startActivity(distanceRun);
     }
 
+    public void nearByHospitals (View view) {
+        startActivity(new Intent(MainActivity.this, MapsActivity.class));
+    }
+
 }
