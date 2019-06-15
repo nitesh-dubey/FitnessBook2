@@ -1,5 +1,6 @@
 # FitnessBook2
-simple fitness app which contains step detector,keeps record of distance run and provides health tips
+simple fitness app which contains step detector,keeps record of distance run by the user, uses Google map to show the current location of user and hospitals Nearby and provides many health tips.
+
 #Features:
 1. Counts the Steps Run by the user
 2. Calculates Total Distance Run Everyday automatically
