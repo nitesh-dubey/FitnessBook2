@@ -9,3 +9,11 @@ simple fitness app which contains step detector,keeps record of distance run by 
 5. Shows out current Location and Nearby Hospitals using GPS in Google map
 6. Gives Health Tips to use
 7. Attractive user Interface
+
+In order To Try a debug version of this app 
+download from this link ::
+
+https://drive.google.com/open?id=15HLKMS-luEhZJrZX6FYgdSCWfjbgpu5u
+
+username = fitnessbook
+password = 12345
